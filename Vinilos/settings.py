@@ -156,4 +156,6 @@ CORS_ALLOWED_ORIGINS = [
     'https://vinilostudios.me'
 ]
 
+CORS_ALLOW_HEADERS = ['authorization', 'content-type']
+
 CORS_ALLOW_CREDENTIALS = True
