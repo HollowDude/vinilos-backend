@@ -153,9 +153,10 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    'https://vinilostudios.me'
+    'http://vinilostudios.me'
 ]
 
-CORS_ALLOW_HEADERS = ['authorization', 'content-type']
+CORS_ALLOW_ALL_HEADERS = True
+
 
 CORS_ALLOW_CREDENTIALS = True
