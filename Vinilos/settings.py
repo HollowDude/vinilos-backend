@@ -158,9 +158,21 @@ CORS_ALLOWED_ORIGINS = [
     'https://vinilos-backend-2cwk.onrender.com'
 ]
 
-CORS_ALLOW_METHODS = ['*']
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',
+]
 
-CORS_ALLOW_ALL_HEADERS = True
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'authorization',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 
 CORS_ALLOW_CREDENTIALS = True
