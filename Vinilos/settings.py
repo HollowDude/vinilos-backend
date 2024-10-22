@@ -170,7 +170,6 @@ CORS_ALLOW_METHODS = [
 CORS_ALLOW_HEADERS = [
     'content-type',
     'authorization',
-    'x-csrftoken',
     'x-requested-with',
 ]
 
