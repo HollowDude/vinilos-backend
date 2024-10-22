@@ -153,8 +153,12 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    'http://vinilostudios.me'
+    'http://vinilostudios.me',
+    'http://vinilostudios.me/tattoos',
+    'https://vinilos-backend-2cwk.onrender.com'
 ]
+
+CORS_ALLOW_METHODS = ['*']
 
 CORS_ALLOW_ALL_HEADERS = True
 
