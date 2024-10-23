@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['vinilostudios.me', 'vinilos-backend-2cwk.onrender.com']
 
 
 # Application definition
@@ -171,6 +171,7 @@ CORS_ALLOW_HEADERS = [
     'content-type',
     'authorization',
     'x-requested-with',
+    'accept',
 ]
 
 
