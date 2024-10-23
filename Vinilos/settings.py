@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['vinilostudios.me', 'vinilos-backend-2cwk.onrender.com']
+ALLOWED_HOSTS = ['vinilostudios.me', 'vinilos-backend-2cwk.onrender.com', 'localhost', '*']
 
 
 # Application definition
@@ -154,7 +154,8 @@ SIMPLE_JWT = {
 
 CORS_ALLOWED_ORIGINS = [
     'https://vinilostudios.me',
-    'https://vinilos-backend-2cwk.onrender.com'
+    'https://vinilos-backend-2cwk.onrender.com',
+    'https://localhost:3000'
 ]
 
 CORS_ALLOW_METHODS = [
