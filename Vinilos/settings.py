@@ -150,9 +150,10 @@ REST_FRAMEWORK = {
 
 REST_AUTH = {
     "USE_JWT": True,
-    "JWT_AUTH_COOKIE": "_auth",  # Name of access token cookie
-    "JWT_AUTH_REFRESH_COOKIE": "_refresh", # Name of refresh token cookie
-    "JWT_AUTH_HTTPONLY": False,  # Makes sure refresh token is sent
+    "JWT_AUTH_COOKIE": "_auth",            # Nombre de la cookie de acceso
+    "JWT_AUTH_REFRESH_COOKIE": "_refresh", # Nombre de la cookie de refresco
+    "JWT_AUTH_HTTPONLY": True,             # La cookie será HTTP-only para mayor seguridad
+    "JWT_AUTH_SAMESITE": "None",           # Atributo SameSite para permitir cross-site
 }
 
 SIMPLE_JWT = {
