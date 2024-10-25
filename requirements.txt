@@ -14,6 +14,7 @@ python-dotenv==1.0.1
 sqlparse==0.5.1
 typing_extensions==4.12.2
 tzdata==2024.2
+dj-rest-auth==6.0.0  
 dj-database-url
 gunicorn
 django-cors-headers
