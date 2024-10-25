@@ -1,13 +1,14 @@
-class JWTAuthCookieMiddleware:
-    def __init__(self, get_response):
-        self.get_response = get_response
+from django.conf import settings
+from django.utils.deprecation import MiddlewareMixin
 
-    def __call__(self, request):
-        access_token = request.COOKIES.get('access_token')  # Leer token de la cookie
-
-        if access_token:
-            # Pasar el token en la cabecera de autorización
-            request.META['HTTP_AUTHORIZATION'] = f'Bearer {access_token}'
-
-        response = self.get_response(request)
+class SameSiteSecureCookieMiddleware(MiddlewareMixin):
+    def process_response(self, request, response):
+        # Configura `_auth` y `_refresh` cookies con SameSite=None y Secure=True
+        auth_cookie = settings.REST_AUTH.get("JWT_AUTH_COOKIE", "_auth")
+        refresh_cookie = settings.REST_AUTH.get("JWT_AUTH_REFRESH_COOKIE", "_refresh")
+        
+        for cookie_name in [auth_cookie, refresh_cookie]:
+            if cookie_name in response.cookies:
+                response.cookies[cookie_name]["samesite"] = "None"
+                response.cookies[cookie_name]["secure"] = True
         return response
