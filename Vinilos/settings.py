@@ -169,15 +169,19 @@ SIMPLE_JWT = {
 }
 
 # Cookies settings
-SESSION_COOKIE_SECURE = True  # Asegura que la cookie sólo se envía a través de HTTPS
+SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True  # Previene el acceso JavaScript a la cookie CSRF
-SESSION_COOKIE_HTTPONLY = False
+SESSION_COOKIE_HTTPONLY = True
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+
+CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     'https://vinilostudios.me',
     'https://vinilos-backend-2cwk.onrender.com',
@@ -201,4 +205,3 @@ CORS_ALLOW_HEADERS = [
 ]
 
 
-CORS_ALLOW_CREDENTIALS = True
