@@ -47,9 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'tattoos',
-    'piercings',
-    'rest_framework_simplejwt.token_blacklist',
-    'authenticate'
+    'piercings'
 ]
 
 MIDDLEWARE = [
@@ -161,10 +159,6 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
     'SLIDING_TOKEN_LIFETIME': timedelta(days=30),
-    'SLIDING_TOKEN_REFRESH_LIFETIME_LATE_USER': timedelta(days=1),
-    'SLIDING_TOKEN_LIFETIME_LATE_USER': timedelta(days=30),
-    'ROTATE_REFRESH_TOKENS': True,  # Rotar el token de refresco cuando se use
-    'BLACKLIST_AFTER_ROTATION': True,  # Blacklist del token tras rotación
     'ALGORITHM': 'HS256',  # Algoritmo de firma
     'SIGNING_KEY': SECRET_KEY,
     'AUTH_HEADER_TYPES': ('Bearer',),  # Tipo de encabezado para los tokens
