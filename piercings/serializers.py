@@ -7,7 +7,7 @@ class PiercingsSerializer(serializers.ModelSerializer):
         model = piercings
         fields = ('name','description', 'price', 'photo')
 
-    def get_imagen(self, obj):
+    def get_photo(self, obj):
      try:
         if obj.photo:
             return base64.b64encode(obj.photo).decode('utf-8')
