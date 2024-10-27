@@ -2,10 +2,10 @@ import base64
 from .models import piercings
 from rest_framework import serializers
 class PiercingsSerializer(serializers.ModelSerializer):
-    photos = serializers.SerializerMethodField()
+    photo = serializers.SerializerMethodField()
     class Meta:
         model = piercings
-        fields = '__all__'
+        fields = ('name','description', 'price', 'photo')
 
     def get_imagen(self, obj):
         if obj.photos:
