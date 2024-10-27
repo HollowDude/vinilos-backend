@@ -7,5 +7,3 @@ class tattoos(models.Model):
     photo = models.BinaryField(blank=True, null=True)
     date = models.DateField(default = datetime.now())
     price = models.IntegerField(default=int(1))
-    def __str__(self):
-        return self.name
