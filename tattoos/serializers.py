@@ -1,5 +1,5 @@
 import base64
-from .models import piercings
+from .models import tattoos
 from rest_framework import serializers
 class TattooSerializer(serializers.ModelSerializer):
     photo = serializers.SerializerMethodField()
