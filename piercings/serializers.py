@@ -8,6 +8,10 @@ class PiercingsSerializer(serializers.ModelSerializer):
         fields = ('name','description', 'price', 'photo')
 
     def get_imagen(self, obj):
+     try:
         if obj.photo:
             return base64.b64encode(obj.photo).decode('utf-8')
+        return None
+     except Exception as e:
+        print(f"Error al codificar la imagen: {e}")
         return None
