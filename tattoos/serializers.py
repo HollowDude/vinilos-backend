@@ -3,6 +3,7 @@ from rest_framework import serializers
 import base64
 
 class TattooSerializer(serializers.ModelSerializer):
+    photo = serializers.SerializerMethodField()
     class Meta:
         model = tattoos
         fields = '__all__'
