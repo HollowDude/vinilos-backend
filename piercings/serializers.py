@@ -2,6 +2,7 @@ import base64
 from .models import piercings
 from rest_framework import serializers
 class PiercingsSerializer(serializers.ModelSerializer):
+    photo = serializers.SerializerMethodField()
     class Meta:
         model = piercings
         fields = '__all__'
