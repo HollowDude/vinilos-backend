@@ -1,14 +1,13 @@
-from .models import tattoos
-from rest_framework import serializers
 import base64
-
+from .models import piercings
+from rest_framework import serializers
 class TattooSerializer(serializers.ModelSerializer):
     photo = serializers.SerializerMethodField()
     class Meta:
         model = tattoos
-        fields = '__all__'
+        fields = ('name','description', 'photo', 'date', 'price')
 
     def get_imagen(self, obj):
-            if obj.photo:
-                return base64.b64encode(obj.photo).decode('utf-8')
-            return None
+        if obj.photo:
+            return base64.b64encode(obj.photo).decode('utf-8')
+        return None
