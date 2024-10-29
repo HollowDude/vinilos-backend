@@ -20,7 +20,7 @@ def is_auth(request):
     print(os.getenv('PASSWORD'))
 
     if USERNAME == os.getenv('USERNAME') and PASSWORD == os.getenv('PASSWORD'):
-        return JsonResponse({'Bacano': 'Te autenticaste bacano'}, status.HTTP_200_OK)
+        return JsonResponse({'Bacano': 'Te autenticaste bacano'}, status = status.HTTP_200_OK)
     return JsonResponse({'Uh, problema':'No introdujiste bien un dato bro'}, status = status.HTTP_401_UNAUTHORIZED)
 
 
