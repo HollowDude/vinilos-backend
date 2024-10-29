@@ -7,7 +7,7 @@ class TattooSerializer(serializers.ModelSerializer):
         model = tattoos
         fields = ('name','description', 'photo', 'date', 'price')
 
-    def get_imagen(self, obj):
+    def get_photo(self, obj):
         if obj.photo:
             return base64.b64encode(obj.photo).decode('utf-8')
         return None
