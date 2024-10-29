@@ -7,7 +7,6 @@ from rest_framework import viewsets
 class TattoosViewSet(viewsets.ModelViewSet):
     queryset = tattoos.objects.all()
     serializer_class = serializers.TattooSerializer
-
 """
 #Otras ways:
 
