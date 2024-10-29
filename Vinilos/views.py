@@ -8,12 +8,14 @@ def keep_alive(request):
 
 
 
+
 @api_view(['POST'])
 def is_auth(request):
-    username = request.data.get('user')
-    password = request.data.get('pass')
+    USERNAME = request.data.get('username')
+    PASSWORD = request.data.get('password')
 
-    if username == os.getenv('USERNAME') and password == os.getenv('PASSWORD'):
+    if USERNAME == os.getenv('USERNAME') and PASSWORD == os.getenv('PASSWORD'):
         return JsonResponse({'Bacano': 'Te autenticaste bacano'}, 200)
     return JsonResponse({'Uh, problema':'No introdujiste bien un dato bro'}, status = status.HTTP_401_UNAUTHORIZED)
+
 
